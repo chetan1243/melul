@@ -1,14 +1,47 @@
 {
-  "name": "gsc",
+  "name": "sparky",
   "version": "1.0.0",
-  "description": "a bot",
-  "main": "index.js",
+  "description": "The Only Discord Bot You Need",
+  "main": "sparky.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "mrevil",
-  "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.4.2"
-  }
+    "base-64": "^0.1.0",
+    "bufferutil": "^4.0.0",
+    "chalk": "^2.4.1",
+    "cleverbot.io": "^1.0.4",
+    "client": "0.0.1",
+    "cpu-stat": "^2.0.1",
+    "discord-economy": "^1.1.5",
+    "discord.js": "^11.4.2",
+    "discord.js-musicbot-addon": "^13.3.0",
+    "inquirer": "^6.2.0",
+    "mal-scraper": "^2.4.5",
+    "module": "^1.2.5",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.2",
+    "ms": "^2.1.1",
+    "os": "^0.1.1",
+    "sequelize": "^4.41.2",
+    "sqlite3": "^4.0.4",
+    "superagent": "^4.0.0-beta.5",
+    "utf8": "^3.0.0",
+    "weather-js": "^2.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anish-Shobith/Sparky-Discord-Bot.git"
+  },
+  "keywords": [
+    "discordbot",
+    "discord.js"
+  ],
+  "author": "Anish Shobith",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Anish-Shobith/Sparky-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/Anish-Shobith/Sparky-Discord-Bot#readme"
 }
