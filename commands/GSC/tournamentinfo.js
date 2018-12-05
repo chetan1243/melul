@@ -11,7 +11,8 @@ module.exports.run = async(bot, message) => {
     .addField("TOURNAMENT NAME-","€ŞĦΔŇǤ ŞĦΔĦ NOOB NE NAHI BATAYA.")
     .addField("TOURNAMENT DATE ","11-DEC-2018 - 12-DEC-2018")
     .addField("TOURNAMENT HOSTE","Tournament Supportive community")
-    .addField("LINK OF REGISTRATION","LINK - €ŞĦΔŇǤ ŞĦΔĦ NOOB NE NAHI BATAYA");
+    .addField("LINK OF REGISTRATION","LINK - €ŞĦΔŇǤ ŞĦΔĦ NOOB NE NAHI BATAYA")
+    .addField("PRIZE OF TOURNAMENT","TO BE ANNOUNCED");
 
     message.channel.send(botembed);
 
