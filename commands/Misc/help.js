@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 module.exports.run = async (bot, message, args, prefix) => {
   
     if(args[0] === "help") return message.channel.send(`Just do ${prefix}help instead.`);
+    if(args[0] === "!help") return message.channel.send("HELP MSG SEND IN YOUR DM! CHECK OUT");
 
  if(args[0]) {
      let command = args[0];
