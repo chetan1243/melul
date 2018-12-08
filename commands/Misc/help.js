@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-const botconfig = require("./botconfig.json");
-const fs = require("fs");
+
 module.exports.run = async (bot, message, args, prefix) => {
   
     if(args[0] === "help") return message.channel.send(`Just do ${prefix}help instead.`);
