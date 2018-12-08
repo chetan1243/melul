@@ -4,18 +4,7 @@ const fs = require("fs");
 module.exports.run = async (bot, message, args, prefix) => {
   
     if(args[0] === "help") return message.channel.send(`Just do ${prefix}help instead.`);
-    if(cmd === `${prefix}help`){
-        let bicon = bot.user.displayAvatarURL;
-        let botembed = new Discord.RichEmbed()
     
-        .setDescription("CONFERMATION")
-        .setColor("#00ff00")
-        .setThumbnail(bicon)
-        .addField("SENT","HELP MSG IS SEND IN YOUR DM CHECK OUT!")
-    
-        return message.channel.send(botembed);
-    }
-
  if(args[0]) {
      let command = args[0];
      if(bot.commands.has(command)) {
