@@ -27,7 +27,7 @@ message.channel.send(commandhelp); // ye comamnd help hai main help nahi
     .setColor("BLUE")
     .setThumbnail("https://i.imgur.com/6JsuVCH.png");
     bot.commands.filter(cmd => cmd.command.category === "OWNER").map(cmd => owner.addField(cmd.command.name , `**${cmd.command.description}**`));
-    message.author.send(owner);
+    
 
 
     let guild = new Discord.RichEmbed()
@@ -36,31 +36,39 @@ message.channel.send(commandhelp); // ye comamnd help hai main help nahi
     .setColor("BLUE")
     .setThumbnail("https://i.imgur.com/SuDr9pf.png");
     bot.commands.filter(cmd => cmd.command.category === "GUILD").map(cmd => guild.addField(cmd.command.name , `**${cmd.command.description}**`));
-    message.author.send(guild);
-
+    
     let misc = new Discord.RichEmbed()
     .setTitle("Misc COMMANDS")
     .setDescription(`${bot.user.username} Misc Commands`) 
     .setColor("BLUE")
     .setThumbnail("https://i.imgur.com/8ObZIQl.png");
     bot.commands.filter(cmd => cmd.command.category === "MISC").map(cmd => misc.addField(cmd.command.name , `**${cmd.command.description}**`));
-    message.author.send(misc);
+    
 
   let economy = new Discord.RichEmbed()
     .setTitle("Economy COMMANDS")
     .setDescription(`${bot.user.username} Economy Commands`) 
     .setColor("BLUE")
     bot.commands.filter(cmd => cmd.command.category === "ECONOMY").map(cmd => economy.addField(cmd.command.name , `**${cmd.command.description}**`));
-    message.author.send(economy);
+    
 
     let GSC = new Discord.RichEmbed()
     .setTitle("GSC COMMANDS")
     .setDescription(`${bot.user.username} GSC Commands`) 
     .setColor("BLUE")
     bot.commands.filter(cmd => cmd.command.category === "GSC").map(cmd => GSC.addField(cmd.command.name , `**${cmd.command.description}**`));
-    message.author.send(GSC);
-
-
+    
+try {
+message.author.send(owner);
+message.author.send(guild);
+message.author.send(misc);
+message.author.send(economy);
+message.author.send(GSC);
+message.channel.send(`${message.author.username} Help Commands Have Been Sent To Your DM's`)
+}
+catch(e) {
+message.channel.send(`${message.author.username} boi open your DM's so i can send you my help commands!!`)
+};
 
 }
 };
