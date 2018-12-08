@@ -5,7 +5,9 @@ module.exports.run = async (bot, message, args, prefix) => {
   
     if(args[0] === "help") return message.channel.send(`Just do ${prefix}help instead.`);
     
+   
  if(args[0]) {
+
      let command = args[0];
      if(bot.commands.has(command)) {
          command = bot.commands.get(command);
@@ -19,6 +21,14 @@ message.channel.send(commandhelp); // ye comamnd help hai main help nahi
      }
  }
  if(!args[0]) {
+     
+    let owner = new Discord.RichEmbed()
+    .setTitle("Owner COMMANDS")
+    .setDescription(`${bot.user.username} Dev Comamnds`)  
+    .setColor("BLUE")
+    .setThumbnail("https://i.imgur.com/6JsuVCH.png");
+    bot.commands.filter(cmd => cmd.command.category === "OWNER").map(cmd => owner.addField(cmd.command.name , `**${cmd.command.description}**`));
+    message.author.send(owner);
 
 
     let guild = new Discord.RichEmbed()
