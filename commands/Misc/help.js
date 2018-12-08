@@ -32,14 +32,6 @@ message.channel.send(commandhelp); // ye comamnd help hai main help nahi
  if(!args[0]) {
 
 
-    let owner = new Discord.RichEmbed()
-    .setTitle("Owner COMMANDS")
-    .setDescription(`${bot.user.username} Dev Comamnds`)  
-    .setColor("BLUE")
-    .setThumbnail("https://i.imgur.com/6JsuVCH.png");
-    bot.commands.filter(cmd => cmd.command.category === "OWNER").map(cmd => owner.addField(cmd.command.name , `**${cmd.command.description}**`));
-    message.author.send(owner);
-    
     let guild = new Discord.RichEmbed()
     .setTitle("Guild COMMANDS")
     .setDescription(`${bot.user.username} Guild Commands`)  
