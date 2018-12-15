@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 const fs = require("fs");
 const ms = require("ms");
-
+   //<prefix>warn @mention that user <reason>
 module.exports.run = async (bot, message ,args) => {
 let warns = JSON.parse(fs.readFileSync("./data/warnings.json","utf8"));
 
@@ -16,7 +16,7 @@ if(!warns[wUser.id]) warns[wUser.id] = {
 
 warns[wUser.id].warns++;
 
-fs.writeFile("./warnings", JSON.stringify(warns), (err) => {
+fs.writeFile("./data/warnings", JSON.stringify(warns), (err) => {
     if (err) console.log(err);
 });
 
@@ -59,7 +59,7 @@ module.exports.command = {
 name: 'warn',
 permission: "ADMINSTRATOR",
 description: "WARN A USER",
-usage: `FOR WARNING`,
+usage: `<prefix>warn @mention <reason> {Don't Include <>}`,
 category: "MODERATION",
 enabled: true
 };
