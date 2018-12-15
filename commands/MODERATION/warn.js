@@ -24,7 +24,7 @@ fs.writeFile("./data/warnings", JSON.stringify(warns), (err) => {
  .setDescription("warns")
  .setAuthor(message.author.username)
  .setColor("#fc6400")
- .addField("warned user", wUser.tag)
+ .addField("warned user", `<@${wUser.id}>`)
  .addField("warned in", message.channel)
  .addField("Number of warnings", warns[wUser.id].warns)
  .addField("Reason", reason);
