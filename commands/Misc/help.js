@@ -27,9 +27,14 @@ message.channel.send(commandhelp); // ye comamnd help hai main help nahi
     .setColor("BLUE")
     .setThumbnail("https://i.imgur.com/6JsuVCH.png");
     bot.commands.filter(cmd => cmd.command.category === "OWNER").map(cmd => owner.addField(cmd.command.name , `**${cmd.command.description}**`));
+
+    let moderation = new Discord.RichEmbed()
+    .setTitle("MODERATION COMMANDS")
+    .setDescription(`${bot.user.username} Mod Comamnds`)  
+    .setColor("BLUE")
+    .setThumbnail("https://i.imgur.com/6JsuVCH.png");
+    bot.commands.filter(cmd => cmd.command.category === "MODERATION").map(cmd => moderation.addField(cmd.command.name , `**${cmd.command.description}**`));
     
-
-
     let guild = new Discord.RichEmbed()
     .setTitle("Guild COMMANDS")
     .setDescription(`${bot.user.username} Guild Commands`)  
@@ -60,6 +65,7 @@ message.channel.send(commandhelp); // ye comamnd help hai main help nahi
     
 try {
 message.author.send(owner);
+message.author.send(moderation);
 message.author.send(guild);
 message.author.send(misc);
 message.author.send(economy);
