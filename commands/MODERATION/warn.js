@@ -16,7 +16,7 @@ if(!warns[wUser.id]) warns[wUser.id] = {
 
 warns[wUser.id].warns++;
 
-fs.writeFile("./data/warnings", JSON.stringify(warns), (err) => {
+fs.writeFile("./data/warnings.json", JSON.stringify(warns), (err) => {
     if (err) console.log(err);
 });
 
@@ -38,19 +38,47 @@ if(warns[wUser.id].warns == 2){
 let muterole = message.guild.roles.find(`name`, "muted");
 if(!muterole) return message.reply("you should create that role dude!")
 
-let mutetime = '10s';
+let mutetime = '1000s';
 await(wUser.addRole(muterole.id));
-message.channel.send(`${wUser.tag} has beed temp. muted!`)
+message.channel.send(`<@${wUser.id}> has beed temp. muted!`)
 
 setTimeout(function(){
     wUser.removeRole(muterole.id)
-    message.channel.reply(`they have been un muted.`)
+    message.reply(`<@${wUser.id}> have been unmuted.`)
 
-})
+}, ms(mutetime))
 }
 if(warns[wUser.id].warns == 3){
+    let muterole = message.guild.roles.find(`name`, "muted");
+    if(!muterole) return message.reply("you should create that role dude!")
+    
+    let mutetime = '5000s';
+    await(wUser.addRole(muterole.id));
+    message.channel.send(`<@${wUser.id}> has beed temp. muted!`)
+    
+    setTimeout(function(){
+        wUser.removeRole(muterole.id)
+        message.reply(`<@${wUser.id}> have been unmuted.`)
+    
+    }, ms(mutetime))
+    }
+    if(warns[wUser.id].warns == 4){
+        let muterole = message.guild.roles.find(`name`, "muted");
+        if(!muterole) return message.reply("you should create that role dude!")
+        
+        let mutetime = '10000s';
+        await(wUser.addRole(muterole.id));
+        message.channel.send(`<@${wUser.id}> has beed temp. muted!`)
+        
+        setTimeout(function(){
+            wUser.removeRole(muterole.id)
+            message.reply(`<@${wUser.id}> have been unmuted.`)
+        
+        }, ms(mutetime))
+        }
+if(warns[wUser.id].warns == 5){
     message.guild.member(wUser).ban(reason);
-    message.channel.send(`${wUser.tag} has been banned!`)
+    message.reply(`<@${wUser.id}> has been banned!`)
     
 }
 } 
