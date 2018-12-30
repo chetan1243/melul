@@ -1,6 +1,6 @@
 @echo off
 color a
 cls
-echo [Sparky] Starting Bot!!!
-node sparky.js
+echo [GSC] Starting Bot!!!
+node index.js
 pause
