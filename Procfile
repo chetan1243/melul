@@ -1,1 +1,2 @@
-workers: node index.js
+workers: node sparky.js
+worker: node index.js
