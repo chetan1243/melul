@@ -3,7 +3,7 @@ const fs = require("fs");
 const ms = require("ms");
    //<prefix>kicks @mention that user 
 module.exports.run = async (bot, message ,args) => {
-let kicks = JSON.parse(fs.readFileSync("./data/warnings.json","utf8"));
+let kicks = JSON.parse(fs.readFileSync("./data/kick.json","utf8"));
 
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("you did't have permission to use this command! sorry.");
 let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
@@ -14,7 +14,7 @@ if(!kicks[wUser.id]) kicks[wUser.id] = {
     kicks: 0
 };
 
-kicks[wUser.id].kicks++;
+
 
 fs.writeFile("./data/warnings.json", JSON.stringify(kicks), (err) => {
     if (err) console.log(err);
@@ -30,7 +30,7 @@ let warnchannel = message.guild.channels.find(`name`, "incidents");
 if(!warnchannel) return("could't find channel");
 
 warnchannel.send(warnEmbed);
-if(kicks[wUser.id].kicks == 1){
+if(kicks[wUser.id].kicks == 0){
     message.guild.member(wUser).kick();
     message.reply(`<@${wUser.id}> has been kicked!`)
     
