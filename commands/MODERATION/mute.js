@@ -3,7 +3,7 @@ const fs = require("fs");
 const ms = require("ms");
    //<prefix>mute @mention that user <reason>
 module.exports.run = async (bot, message ,args) => {
-let mutes = JSON.parse(fs.readFileSync("./data/warnings.json","utf8"));
+let mutes = JSON.parse(fs.readFileSync("./data/warning.json","utf8"));
 
 if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("you did't have permission to use this command! sorry.");
 let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
@@ -30,7 +30,7 @@ let warnchannel = message.guild.channels.find(`name`, "incidents");
 if(!warnchannel) return("could't find channel");
 
 warnchannel.send(warnEmbed);
-if(mutes[wUser.id].mutes == 1){
+if(mutes[wUser.id].mutes == 0){
 let muterole = message.guild.roles.find(`name`, "muted");
 if(!muterole) return message.reply("you should create that role dude!")
 let mutetime = '7200s';
