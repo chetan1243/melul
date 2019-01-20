@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const superagent = require('superagent');
+const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
     if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("you did't have permission to use this command! sorry.");
@@ -13,14 +14,21 @@ module.exports.run = async (bot, message, args) => {
             //ruser.send(`@everyone`)
             ruser.send(embed)
             message.channel.send(`Your message sent to <@${ruser.id}>`)
+            let mutetime = '0s';
+            setTimeout(function(){
+            message.delete(text)
+            
+
+            }, ms(mutetime))
+}
     
-    }
+   
 
 module.exports.command = {
 name: 'send',
 permission: "ADMINSTRATOR",
-description: "announcement",
-usage: `.announcement <message> channel`,
+description: "send msg to user",
+usage: `.send @user msg`,
 category: "MODERATION",
 enabled: true
 };
