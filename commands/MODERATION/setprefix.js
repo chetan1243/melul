@@ -32,6 +32,6 @@ module.exports.command = {
     permission: "ADMINSTRATOR",
     description: "Sets Custom Prefix For The Server",
     usage: `${botconfig.PREFIX}setprefix`,
-    category: "GUILD",
+    category: "MODERATION",
     enabled: true
 };
