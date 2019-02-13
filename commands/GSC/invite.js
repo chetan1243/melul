@@ -6,9 +6,9 @@ module.exports.run = async(bot, message) => {
     let botembed = new Discord.RichEmbed()
 
     .setDescription("INVITE LINK OF GSC BOT!")
-    .setColor("#00ff00")
+    .setColor("BLUE")
     .setThumbnail(bicon)
-    .addField("SQUAD NAMES-","You can add GSC bot by using given LINK - https://discordapp.com/api/oauth2/authorize?client_id=519485453846446110&permissions=0&scope=bot")
+    .addField("This bot is specially designed for GSC so many function may not work on other servers!-","You can add GSC bot by using given LINK - https://discordapp.com/api/oauth2/authorize?client_id=519485453846446110&permissions=0&scope=bot")
     
 
     message.channel.send(botembed);
