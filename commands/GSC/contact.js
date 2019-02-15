@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const botconfig = require("../../botconfig.json");
 
 module.exports.run = async (bot, message, args) => {
-    let text = args.slice(1).join(" ");
+    let text = args.slice(0).join(" ");
     let taker = await bot.users.get(botconfig.owner);
     const embed = new Discord.RichEmbed()
             .setColor("#fc6400")
