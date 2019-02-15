@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
 const botconfig = require("../../botconfig.json");
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
     let text = args.slice(1).join(" ");
-    let taker = botconfig.owner;
+    let taker = await bot.users.get(botconfig.owner);
     const embed = new Discord.RichEmbed()
             .setColor("#fc6400")
             .setTitle("MESSAGE-")
             .addField(" Owner", message.guild.owner.user.tag, true)
             .setDescription(text);
-         taker.send(embed)
+            taker.send(embed);
     
  };
 
