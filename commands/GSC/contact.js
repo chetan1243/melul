@@ -1,0 +1,24 @@
+const Discord = require('discord.js');
+const botconfig = require("../../botconfig.json");
+
+module.exports.run = async(bot, message, args) => {
+    let text = args.slice(1).join(" ");
+    let taker = botconfig.owner;
+    const embed = new Discord.RichEmbed()
+            .setColor("#fc6400")
+            .setTitle("MESSAGE-")
+            .addField(" Owner", message.guild.owner.user.tag, true)
+            .setDescription(text);
+         taker.send(embed)
+    
+ };
+
+ module.exports.command = {
+    name: 'contact',
+    permission: "None",
+    description: "send msg to developer of bot!",
+    usage: `mesg to developer of bto`,
+    category: "GSC",
+    enabled: true
+
+};
