@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, args) => {
             .addField(" Owner", message.guild.owner.user.tag, true)
             .setDescription(text);
             taker.send(embed);
+            message.channel.send(":white_check_mark: YOUR MESSAGE IS DELIVERED TO MR_EVIL!");
     
  };
 
