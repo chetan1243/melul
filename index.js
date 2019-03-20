@@ -20,7 +20,7 @@ const applyText = (canvas, text) => {
 };
 
 client.on('guildMemberAdd', async member => {
-	const channel = member.guild.channels.find(ch => ch.name === '📡welcome-to-hub📡');
+	const channel = member.guild.channels.find(ch => ch.name === '🙏welcome🙏');
 	if (!channel) return;
 
 	const canvas = Canvas.createCanvas(700, 250);
